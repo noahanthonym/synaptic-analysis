@@ -1,4 +1,4 @@
-% Create a new folder with the min.mat files inside. 
+% Create a new folder with the result files inside
 
 clear;
 close all
