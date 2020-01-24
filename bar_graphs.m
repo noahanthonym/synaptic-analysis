@@ -4,7 +4,6 @@ clear;
 close all
 clc
 
-clear
 folder = uigetdir;
 test = str2num(cell2mat(inputdlg('Would you like to do a paired or unpaired test? Press 1 for paired 2 for unpaired')));
 cd(folder);
