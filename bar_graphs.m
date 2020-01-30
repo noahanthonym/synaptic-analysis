@@ -50,9 +50,16 @@ hold on;
 errorbar(barkeeper(1,:), barkeeper(2,:), '.', 'color', 'k', 'marker', 'none');
 hold on;
 
-for points = 1:size(test_keeper, 1);
-    plot(test_keeper(points, 1:2) , 'o', 'color' , 'green', 'MarkerFaceColor', 'green')
-    hold on
+if test == 1;
+    for points = 1:size(test_keeper, 1);
+        plot(test_keeper(points, 1:2) , '-o', 'color' , 'green', 'MarkerFaceColor', 'green')
+        hold on
+    end
+elseif test == 2;
+    for points = 1:size(test_keeper, 1);
+        plot(test_keeper(points, 1:2) , 'o', 'color' , 'green', 'MarkerFaceColor', 'green')
+        hold on
+    end
 end
 
  %axis([0 3 0 40])
