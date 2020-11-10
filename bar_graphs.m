@@ -1,5 +1,7 @@
-% Create .mat files containing the results. First create a variable to hold one set of values. Then, use save function to save files. Create a new folder with the result files inside. Results are organized
-% in .mat files with data in column vectors. 
+% Create .mat files containing the results. First create a variable to hold
+% one set of values. Then, use save function to save files. Create a new
+% folder with the result files inside. Results are organized in .mat files
+% with data in column vectors.
 
 clear;
 close all
