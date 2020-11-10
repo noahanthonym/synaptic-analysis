@@ -1,4 +1,4 @@
-% Create a new folder with the result files inside. Results are organized
+% Create .mat files containing the results. Create a new folder with the result files inside. Results are organized
 % in .mat files with data in column vectors. 
 
 clear;
