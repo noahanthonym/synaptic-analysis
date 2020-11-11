@@ -5,14 +5,16 @@ clear
 close all
 clc
 
-folder = uigetdir('' , 'Select folder to save data');
+save_folder = uigetdir('' , 'Select folder to save data');
 
-array = inputdlg('Enter the number of arrays to import');
+array = [inputdlg('Enter the number of arrays to import')];
 
-[import_file , import_path] = uigetfile('' , 'Select file to import data');
-
+[import_file , import_path] = uigetfile('*.*' , 'Select file to import data');
+cd(import_path)
 for stepper = 1:array;
     file_nm = inputdlg('Enter the file name you want to use for the data');
     imported_data = uiimport(import_file); 
+    cd(save_folder)
     save(file_nm , 'imported_data');
+    cd(import_path)
 end
