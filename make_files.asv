@@ -1,0 +1,10 @@
+% use this script to make files for analysis. Before running this script,
+% create an empty folder where the data will be saved. 
+
+clear
+close all
+clc
+
+folder = uigetdir('Select folder to save data');
+
+array = inputdlg('Enter the number of a
