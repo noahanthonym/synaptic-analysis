@@ -1,6 +1,8 @@
 % use this script to make files for analysis. Before running this script,
 % create an empty folder where the data will be saved. 
 
+%unfinished and developmental only
+
 clear
 close all
 clc
