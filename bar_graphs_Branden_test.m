@@ -72,6 +72,7 @@ end
  set(gcf,'position',[680 558 160 210])
  set(gca, 'TickLength', [0.025 0.025]);
  set(gca,'FontSize',9);
+ set(gcf, 'Renderer', 'painters')
  
  if test == 1;
  [h p ci stats] = ttest(test_keeper(:, 1), test_keeper(:, 2))
