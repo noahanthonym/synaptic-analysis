@@ -56,14 +56,16 @@ hold on;
 
 if test == 1;
     for points = 1:size(test_keeper, 1);
-        plot(test_keeper(points, 1:2) , '-o', 'color' , 'green', 'MarkerFaceColor', 'green')
-        hold on
-    end
+        plot(test_keeper(points, 1:2) , '-o', 'color' , 'black', 'MarkerFaceColor', 'green') %% column 2 point settings, green is color for points
+        plot(test_keeper(points, 1:1) , '-o', 'color' , 'black', 'MarkerFaceColor', 'red')   %% column 1 point settings, red is color for points
+        hold on                                                                              %% black color is for lines connecting points
+    end                                                                                      %% note: column 1 point colors are just overlaided onto only column 2 thus separating colors hence why it must go 1:2 then 1:1
 elseif test == 2;
     for points = 1:size(test_keeper, 1);
-        plot(test_keeper(points, 1:2) , 'o', 'color' , 'green', 'MarkerFaceColor', 'green')
-        hold on
-    end
+        plot(test_keeper(points, 1:2) , 'o', 'color' , 'green', 'MarkerFaceColor', 'green') %% column 2 point settings, green is color for points
+        plot(test_keeper(points, 1:1) , 'o', 'color' , 'red', 'MarkerFaceColor', 'red')     %% column 1 point settings, red is color for points
+        hold on                                                                             %% no lines connecting points b/c it is unpaired
+    end                                                                                     %% note: column 1 point colors are just overlaided onto only column 2 thus separating colors hence why it must go 1:2 then 1:1
 end
 
  %axis([0 3 0 40])
