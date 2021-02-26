@@ -23,6 +23,10 @@ for f = 1:count;
     holdercells(1, f) = {currkeeper.(name)};
 end
 
+for f = 1:count; %% transverses holdercells struct type to cell type
+    holdercells(1,f) = struct2cell(holdercells{1,f});
+end
+
 for subs = 1:size(holdercells, 2);
     for frames = 1:size(holdercells{1, subs}, 1);
         test_keeper(frames, subs) = holdercells{1, subs}(frames, 1);
