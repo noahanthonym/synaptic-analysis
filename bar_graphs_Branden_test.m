@@ -49,19 +49,21 @@ barkeeper(2,1) = nanstd(test_keeper(:,1))/denominator1;
 barkeeper(2,2) = nanstd(test_keeper(:,2))/denominator2;
 
 figure
-bar(barkeeper(1,:), 'b');
+b = bar(barkeeper(1,:));
+b.FaceColor = 'white';
 hold on;
 errorbar(barkeeper(1,:), barkeeper(2,:), '.', 'color', 'k', 'marker', 'none');
 hold on;
 
 if test == 1;
     for points = 1:size(test_keeper, 1);
-        plot(test_keeper(points, 1:2) , '-o', 'color' , 'green', 'MarkerFaceColor', 'green')
+        plot(test_keeper(points, 1:2) , '-o', 'color' , 'k', 'MarkerFaceColor', 'Green')
+         plot(test_keeper(points, 1:1) , '-o', 'color' , 'k', 'MarkerFaceColor', 'Red')
         hold on
     end
 elseif test == 2;
     for points = 1:size(test_keeper, 1);
-        plot(test_keeper(points, 1:2) , 'o', 'color' , 'green', 'MarkerFaceColor', 'green')
+        plot(test_keeper(points, 1:2) , 'o', 'color' , 'k', 'MarkerFaceColor', 'k')
         hold on
     end
 end
@@ -72,7 +74,6 @@ end
  set(gcf,'position',[680 558 160 210])
  set(gca, 'TickLength', [0.025 0.025]);
  set(gca,'FontSize',9);
- set(gcf, 'Renderer', 'painters')
  
  if test == 1;
  [h p ci stats] = ttest(test_keeper(:, 1), test_keeper(:, 2))
