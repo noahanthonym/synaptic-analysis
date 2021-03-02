@@ -53,7 +53,7 @@ barkeeper(2,1) = nanstd(test_keeper(:,1))/denominator1;
 barkeeper(2,2) = nanstd(test_keeper(:,2))/denominator2;
 
 figure
-bar(barkeeper(1,:), 'FaceColor', 'w', 'EdgeColor', 'w'); % vertical bar chart %% these w create the full bar graph white gone
+bar(barkeeper(1,:), 'FaceColor', [0.99 0.99 0.99], 'EdgeColor', [0.0 0.0 0.0], 'LineWidth', 1.5); % vertical bar chart, white bar/black outline/thickend outline
 hold on;
 errorbar(barkeeper(1,:), barkeeper(2,:), '.', 'color', 'k', 'marker', 'none');
 hold on;
@@ -72,12 +72,18 @@ elseif test == 2;
     end
 end
 
+ m = ylim('mode'); %% allows to manually set y limit
+ targetpoint = max(test_keeper, [], 'all'); %% finds maximum value overall
+ target = round(targetpoint, -2); %% rounds that max to nearest 100
+ ylim([0, (target)]); %% sets max y to the rounded 100th max value
+ 
  % sets axis & bars labels 
- dlg_ans  = inputdlg({'What is your x-axis representing?', 'What is your y-axis representing?', 'What is your first bar representing?', 'What is your second bar representing?'});
- xlabel(dlg_ans(1,1))
- ylabel(dlg_ans(2,1))
- barnames = dlg_ans(3:4,1);
+ dlg_ans  = inputdlg({'What is your graph title?','What is your x-axis representing?', 'What is your y-axis representing?', 'What is your first bar representing?', 'What is your second bar representing?'});
+ xlabel(dlg_ans(2,1))
+ ylabel(dlg_ans(3,1))
+ barnames = dlg_ans(4:5,1);
  set(gca,'xticklabel',barnames)
+ title(dlg_ans(1,1))
 
  %axis([0 3 0 40])
  set(gca,'TickDir','out')
